@@ -319,12 +319,12 @@ if uploaded_file is not None:
     col_btn1, col_btn2 = st.columns(2)
     
     with col_btn1:
-        st.markdown("### ⚡ Tính năng 1")
+        st.markdown("### ⚡ Compress")
         compress_clicked = st.button("🗜️ Compress (Giảm dung lượng)", use_container_width=True)
         st.caption("Nén file dưới 10MB và tạo liên kết tải file tạm.")
         
     with col_btn2:
-        st.markdown("### ☁️ Tính năng 2")
+        st.markdown("### ☁️ Upload")
         if GDRIVE_ENABLED:
             upload_clicked = st.button("🚀 Upload (Tải lên Google Drive)", use_container_width=True)
             st.caption("Mở bảng sửa tên theo chuẩn và upload trực tiếp lên Drive.")
