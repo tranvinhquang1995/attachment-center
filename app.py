@@ -16,13 +16,83 @@ st.set_page_config(
     layout="centered"
 )
 
+# --- KHÓA CỨNG GIAO DIỆN TỐI & ẨN MENU THỂ HIỆN SWITCH THEME ---
+st.markdown(
+    """
+    <style>
+    /* 1. Ẩn hoàn toàn Menu 3 chấm (Main Menu) chứa nút cài đặt theme */
+    #MainMenu {visibility: hidden;}
+    
+    /* 2. Ẩn header của Streamlit (chứa nút Deploy, theme switcher mặc định nếu có) */
+    header {visibility: hidden;}
+    
+    /* 3. Khóa cứng màu nền tối (Dark Mode) cho toàn bộ ứng dụng */
+    .stApp {
+        background-color: #0E1117 !important;
+        color: #FAFAFA !important;
+    }
+    
+    /* Tùy chỉnh màu chữ của các đề mục */
+    h1, h2, h3, h4, h5, h6, p, span, label {
+        color: #FAFAFA !important;
+    }
+    
+    /* Tùy chỉnh vùng File Uploader để tiệp màu tối */
+    div[data-testid="stFileUploader"] {
+        background-color: #1E222B !important;
+        border: 1px dashed #4F5666 !important;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    
+    /* Định dạng hộp nhập liệu (Text Input) tối */
+    input[type="text"] {
+        background-color: #1E222B !important;
+        color: #FAFAFA !important;
+        border: 1px solid #4F5666 !important;
+    }
+    
+    /* Tùy chỉnh form */
+    div[data-testid="stForm"] {
+        background-color: #1E222B !important;
+        border: 1px solid #3F4452 !important;
+    }
+
+    /* Thiết kế footer cố định ở cuối trang */
+    .nobita-footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #11151C;
+        color: #888888;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 14px;
+        font-family: sans-serif;
+        border-top: 1px solid #1E222B;
+        z-index: 999;
+    }
+    .nobita-footer b {
+        color: #FF4B4B; /* Highlight màu đỏ cá tính cho Nobita */
+    }
+    
+    /* Tạo khoảng trống ở cuối để nội dung chính không bị Footer đè lên */
+    .main-container-spacer {
+        margin-bottom: 80px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # --- KHAI BÁO BẬT/TẮT TÍNH NĂNG GOOGLE DRIVE ---
 # BẠN CÓ THỂ ĐỔI GIÁ TRỊ NÀY THÀNH True KHI ĐÃ SẴN SÀNG KÍCH HOẠT LẠI TÍNH NĂNG UPLOAD GOOGLE DRIVE
 GDRIVE_ENABLED = False 
 
 # --- TIÊU ĐỀ ỨNG DỤNG ---
-st.title("📁 Attachment Center (v3)")
-st.markdown("Công cụ tối ưu hóa kích thước hình ảnh/video dành cho Tester.")
+st.title("📁 Attachment Center (v5)")
+st.markdown("Công cụ tối ưu hóa kích thước hình ảnh/video dành cho Tester (Đã khóa giao diện tối).")
 st.markdown("---")
 
 # --- HẰNG SỐ & ĐỊNH CẤU HÌNH ---
@@ -401,4 +471,17 @@ if uploaded_file is not None:
 
 # Hiển thị chú thích cấu hình nếu tính năng được bật
 if GDRIVE_ENABLED and service is None:
-    st.info("💡 Hướng dẫn cấu hình st.secrets nằm trong file README-v3.md.")
+    st.info("💡 Hướng dẫn cấu hình st.secrets nằm trong file README-v5.md.")
+
+# Thêm thẻ khoảng trống để nội dung chính không bị Footer cố định đè lên
+st.markdown("<div class='main-container-spacer'></div>", unsafe_allow_html=True)
+
+# --- CHÂN TRANG BẢN QUYỀN (FOOTER) ---
+st.markdown(
+    """
+    <div class='nobita-footer'>
+        © 2026 Attachment Center. All Rights Reserved. Developed by <b>Nobita</b>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
