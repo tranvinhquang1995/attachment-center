@@ -92,7 +92,7 @@ GDRIVE_ENABLED = False
 
 # --- TIÊU ĐỀ ỨNG DỤNG ---
 st.title("📁 Attachment Center (v5)")
-st.markdown("Công cụ tối ưu hóa kích thước hình ảnh/video dành cho Tester (Đã khóa giao diện tối).")
+st.markdown("Công cụ tối ưu hóa kích thước hình ảnh/video dành cho Tester.")
 st.markdown("---")
 
 # --- HẰNG SỐ & ĐỊNH CẤU HÌNH ---
