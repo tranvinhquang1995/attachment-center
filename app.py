@@ -330,7 +330,7 @@ if uploaded_file is not None:
             st.caption("Mở bảng sửa tên theo chuẩn và upload trực tiếp lên Drive.")
         else:
             upload_clicked = st.button("🚀 Upload (Google Drive) [In-process]", disabled=True, use_container_width=True)
-            st.caption("⏳ *Tính năng tạm khóa - Đang chờ kiểm tra cấp quyền (In-process)*")
+            st.caption("⏳ *Dev đang lỏ, vui lòng chờ code (In-process)*")
 
     # --- XỬ LÝ SỰ KIỆN: COMPRESS CLICKED ---
     if compress_clicked:
